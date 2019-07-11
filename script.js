@@ -1,17 +1,11 @@
-<script>
-(() => {
-	if ('serviceWorker' in navigator) {
-		window.addEventListener('load', () => {
-			navigator.serviceWorker.register('/service-worker.js').
-			then((registration) => {
-				console.log('registered');
-				console.log(registration);
-			},(err) => {
-				console.log(err);
-			});
-		});
-	} else {
-		alert('No service worker support in this browser');
-	}
-});
-</script>
+if ('serviceWorker' in navigator) {
+	navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+    // Registration was successful
+    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+}).catch(function(err) {
+    // registration failed :(
+    	console.log('ServiceWorker registration failed: ', err);
+    });
+}
+
+
