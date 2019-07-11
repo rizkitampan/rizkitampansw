@@ -1,3 +1,4 @@
+<script>
 (() => {
 	if ('serviceWorker' in navigator) {
 		window.addEventListener('load', () => {
@@ -13,3 +14,4 @@
 		alert('No service worker support in this browser');
 	}
 });
+</script>
